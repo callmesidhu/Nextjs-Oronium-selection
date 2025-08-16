@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 import { blogApi } from '@/lib/api';
+import SafeDate from '@/app/components/SafeDate';
+
 
 interface BlogPostPageProps {
   params: {
@@ -76,7 +78,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               
               <div className="flex items-center space-x-1">
                 <Calendar size={16} />
-                <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+                <SafeDate dateString={post.publishedAt} format="long" />
               </div>
               
               <div className="flex items-center space-x-1">

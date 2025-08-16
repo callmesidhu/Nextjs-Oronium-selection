@@ -11,8 +11,8 @@ const Header = () => {
       <div className="container">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-5">
+            <div className="w-8 h-8 bg-black rounded-md flex items-center justify-center mx-3">
               <span className="text-white font-bold text-sm">B</span>
             </div>
             <span className="font-semibold text-xl text-gray-900">Beyond UI</span>
@@ -78,7 +78,7 @@ const Header = () => {
               <Link href="/demo" className="text-gray-700 hover:text-gray-900 transition-colors">
                 Demo
               </Link>
-              <button className="bg-gray-900 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors w-fit">
+              <button className="bg-gray-900 text-white px-6 py-4 rounded-md text-sm font-medium hover:bg-gray-800 transition-colors w-fit">
                 Get Started
               </button>
             </nav>
