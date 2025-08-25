@@ -1,0 +1,13 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://68979eff250b078c204265b5.mockapi.io/api/v1";
+
+export async function fetchPosts() {
+  const res = await fetch(`${API_URL}/posts`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch posts");
+  return res.json();
+}
+
+export async function fetchPost(id: string) {
+  const res = await fetch(`${API_URL}/posts/${id}`, { cache: "no-store" });
+  if (!res.ok) throw new Error("Failed to fetch post");
+  return res.json();
+}
