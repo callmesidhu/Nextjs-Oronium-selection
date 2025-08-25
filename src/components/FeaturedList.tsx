@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Post } from "../types/types";
 
-export default function FeaturedList({ posts }: { posts: any[] }) {
+export default function FeaturedList({ posts }: { posts: Post[] }) {
   return (
     <div>
       {posts.map((post) => (
         <Link href={`/posts/${post.id}`} key={post.id}>
           <div className="flex items-center gap-3 cursor-pointer mb-3">
-            <div className="relative w-20 h-16">
+            <div className="relative min-w-20 h-16">
               <Image
                 src={post.image}
                 alt={post.title}

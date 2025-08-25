@@ -5,15 +5,15 @@ import HeroPost from "../components/HeroPost";
 import FeaturedList from "../components/FeaturedList";
 import PostCard from "../components/PostCard";
 import SearchBar from "../components/SearchBar";
+import { Post } from "../types/types";
 
 export default function HomePageWrapper() {
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
   const [query, setQuery] = useState("");
 
-  // fetch data client-side
   useEffect(() => {
-    fetchPosts().then((data) => {
+    fetchPosts().then((data: Post[]) => {
       setPosts(data);
       setLoading(false);
     });
@@ -23,7 +23,6 @@ export default function HomePageWrapper() {
 
   const [hero, ...others] = posts;
 
-  // filter posts by query across multiple fields
   const filteredPosts = others.filter((post) => {
     const q = query.toLowerCase();
     return (
@@ -37,19 +36,16 @@ export default function HomePageWrapper() {
   return (
     <div className="py-8">
       <div className="grid md:grid-cols-3 gap-8">
-        {/* Hero Post */}
         <div className="md:col-span-2">
           <HeroPost post={hero} />
         </div>
 
-        {/* Featured Sidebar */}
         <div>
           <h2 className="font-semibold text-2xl mb-4">Other featured posts</h2>
           <FeaturedList posts={others.slice(0, 5)} />
         </div>
       </div>
 
-      {/* Recent Posts */}
       <div className="mt-12">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-semibold">Recent Posts</h2>
@@ -65,7 +61,7 @@ export default function HomePageWrapper() {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {filteredPosts.length > 0 ? (
-            filteredPosts.map((post: any) => (
+            filteredPosts.map((post) => (
               <PostCard key={post.id} post={post} />
             ))
           ) : (
