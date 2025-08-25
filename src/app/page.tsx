@@ -27,8 +27,8 @@ export default async function HomePage() {
       {/* Recent Posts */}
       <div className="mt-12">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold">Recent Posts</h2>
-          <SearchBar />
+          <h2 className="text-2xl font-semibold">Recent Posts</h2>
+                 <button className="px-3 py-1 rounded-xl border-2 border-gray-200">All Post</button>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {others.map((post:any) => (
