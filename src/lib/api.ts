@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://68979eff250b078c204265b5.mockapi.io/api/v1";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function fetchPosts() {
   const res = await fetch(`${API_URL}/posts`, { cache: "no-store" });

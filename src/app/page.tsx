@@ -31,7 +31,7 @@ export default async function HomePage() {
           <SearchBar />
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {others.map((post: any) => (
+          {others.map((post:any) => (
             <PostCard key={post.id} post={post} />
           ))}
         </div>
