@@ -19,7 +19,7 @@ export default async function HomePage() {
 
         {/* Featured Sidebar */}
         <div>
-          <h2 className="font-semibold mb-4">Other featured posts</h2>
+          <h2 className="font-semibold text-2xl mb-4">Other featured posts</h2>
           <FeaturedList posts={others.slice(0, 5)} />
         </div>
       </div>
